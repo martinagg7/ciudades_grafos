@@ -1,10 +1,5 @@
 from claseGrafo import *
 
-"""Un método para encontrar la ruta más corta entre dos ciudades. Deberás
-implementar una función ruta_mas_corta(origen, destino) que devuelva la ruta
-más corta entre las ciudades origen y destino (el camino de ciudades recorridas),
-junto con la distancia total de esa ruta."""
-
 def elegir_nodo(origen):
     distancia_minima = float('inf')
     nodo_minimo = None
