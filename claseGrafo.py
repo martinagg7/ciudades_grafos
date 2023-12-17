@@ -23,9 +23,8 @@ class Grafo:
         self.nodos.append(nodo)
     
     def insertar_arista(self, nodo1, nodo2, distancia):
-        arista = Arista(nodo1, nodo2, distancia)
-        nodo1.caminos.append(arista)
-        nodo2.caminos.append(arista)
+        nodo1.caminos.append(Arista(nodo1, nodo2, distancia))
+        nodo2.caminos.append(Arista(nodo2, nodo1, distancia))
         
     def mostrar_grafo(self):
         matriz_de_adyacencia = []
