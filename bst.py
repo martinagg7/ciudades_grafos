@@ -11,19 +11,19 @@ class Arbol:
 
     def insertar(self, distancia, ciudades):
         if self.raiz is None:# si el arbol esta vacio insertamos si no llamos a la función recursiva
-            self.raiz = Nodo(distancia, ciudades)
+            self.raiz = NodoArbol(distancia, ciudades)
         else:
             self.insertar_recur(distancia, ciudades, self.raiz)
 
     def insertar_recur(self, distancia, ciudades, nodo):
         if distancia < nodo.distancia:
             if nodo.izquierda is None:
-                nodo.izquierda = Nodo(distancia, ciudades)
+                nodo.izquierda = NodoArbol(distancia, ciudades)
             else:
                 self.insertar_recur(distancia, ciudades, nodo.izquierda) #recorremos bst hasta encontrar su posición de forma recursiva
         elif distancia > nodo.distancia:
             if nodo.derecha is None:
-                nodo.derecha = Nodo(distancia, ciudades)
+                nodo.derecha = NodoArbol(distancia, ciudades)
             else:
                 self.insertar_recur(distancia, ciudades, nodo.derecha)
         else:
