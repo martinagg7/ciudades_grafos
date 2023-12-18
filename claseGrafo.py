@@ -17,7 +17,7 @@ class Grafo:
     def __init__(self):
         self.numero_de_nodos = 0
         self.nodos = []
-        self.arbol_distancias = Arbol()
+
     
     def insertar_nodo(self,nodo):
         nodo.insertar_id(self.numero_de_nodos)
@@ -27,8 +27,7 @@ class Grafo:
     def insertar_arista(self, nodo1, nodo2, distancia):
         nodo1.caminos.append(Arista(nodo1, nodo2, distancia))
         nodo2.caminos.append(Arista(nodo2, nodo1, distancia))
-        #Anadimos la distancia en nuestro arbol binario
-        self.arbol_distancias.insertar(distancia, [(nodo1.nombre, nodo2.nombre)])
+
 
     def mostrar_grafo(self):
         matriz_de_adyacencia = []
@@ -42,9 +41,8 @@ class Grafo:
                 
         for fila in matriz_de_adyacencia:
             print(fila)
-            
-    def mostrar_distancias_ordenadas(self):
-        self.arbol_distancias.in_order()    
+
+   
 
 espania = Grafo()
 
@@ -58,7 +56,7 @@ espania.insertar_arista(ciudades[1],ciudades[3],994)
 
     
 espania.mostrar_grafo()
-espania.mostrar_distancias_ordenadas()
+
 
 
 
