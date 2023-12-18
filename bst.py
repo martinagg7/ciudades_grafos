@@ -29,15 +29,15 @@ class Arbol:
         else:
             nodo.ciudades += ciudades #si la distancia coincide lo añadimos a la lista de ciudades asociades con esta distancia
 
-def in_order(self, nodo=None):
-    if nodo is None:
-        if self.raiz is None:
-            return  # Si el árbol está vacío, no hay nada que mostrar
-        nodo = self.raiz
+    def in_order(self, nodo=None):
+        if nodo is None:
+            if self.raiz is None:
+                return  # Si el árbol está vacío, no hay nada que mostrar
+            nodo = self.raiz
 
-    self.in_order(nodo.izquierda)
-    print(f"Distancia: {nodo.distancia}, Ciudades: {nodo.ciudades}")
-    self.in_order(nodo.derecha)
+        self.in_order(nodo.izquierda)
+        print(f"Distancia: {nodo.distancia}, Ciudades: {nodo.ciudades}")
+        self.in_order(nodo.derecha)
 
 
 
