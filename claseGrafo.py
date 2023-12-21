@@ -1,4 +1,4 @@
-
+from bst import BST
 class Nodo:#Nodo
     def __init__(self,nombre):
         self.nombre=nombre
@@ -6,6 +6,7 @@ class Nodo:#Nodo
         # self.visitado=None
     def insertar_id(self,id):
         self.id = id
+    
       
 class Arista:#Arista
     def __init__(self, nodo1, nodo2, distancia):
@@ -13,21 +14,25 @@ class Arista:#Arista
         self.nodo2 = nodo2
         self.distancia = distancia
 
+    def __repr__(self):
+        return f"{self.nodo1.nombre} - {self.nodo2.nombre}: {self.distancia}"
+
 class Grafo:
     def __init__(self):
         self.numero_de_nodos = 0
         self.nodos = []
+        self.bst = BST()
    
-
-    
     def insertar_nodo(self,nodo):
         nodo.insertar_id(self.numero_de_nodos)
         self.numero_de_nodos += 1
         self.nodos.append(nodo)
     
     def insertar_arista(self, nodo1, nodo2, distancia):
+        arista = Arista(nodo1, nodo2, distancia)
         nodo1.caminos.append(Arista(nodo1, nodo2, distancia))
         nodo2.caminos.append(Arista(nodo2, nodo1, distancia))
+        self.bst.insertar(distancia, arista)
 
 
     def mostrar_grafo(self):
@@ -43,6 +48,11 @@ class Grafo:
         for fila in matriz_de_adyacencia:
             print(fila)
 
+    def mostrar_distancias_ordenadas(self):
+        distancias_ordenadas = self.bst.obtener_distancias_ordenadas()
+        for distancia, aristas in distancias_ordenadas:
+            print(f"Distancia km: {distancia}, Ciudades: {aristas}")
+
    
 
 espania = Grafo()
@@ -57,6 +67,9 @@ espania.insertar_arista(ciudades[1],ciudades[3],994)
 
     
 espania.mostrar_grafo()
+espania.mostrar_distancias_ordenadas()
+
+
 
 
 
