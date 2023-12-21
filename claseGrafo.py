@@ -3,7 +3,7 @@ class Nodo:#Nodo
     def __init__(self,nombre):
         self.nombre=nombre
         self.caminos = [] #Objetos tipo arista
-        # self.visitado=None
+        self.nodo_previo = None
     def insertar_id(self,id):
         self.id = id
     
@@ -55,19 +55,19 @@ class Grafo:
 
    
 
-espania = Grafo()
+# espania = Grafo()
 
-ciudades = [Nodo('Madrid'), Nodo('Barcelona'), Nodo('Cadiz'), Nodo('Lugo')]
-for ciudad in ciudades:
-    espania.insertar_nodo(ciudad)
-espania.insertar_arista(ciudades[0],ciudades[1],626)
-espania.insertar_arista(ciudades[1],ciudades[2],1108)
-espania.insertar_arista(ciudades[0],ciudades[3],500)
-espania.insertar_arista(ciudades[1],ciudades[3],994)
+# ciudades = [Nodo('Madrid'), Nodo('Barcelona'), Nodo('Cadiz'), Nodo('Lugo')]
+# for ciudad in ciudades:
+#     espania.insertar_nodo(ciudad)
+# espania.insertar_arista(ciudades[0],ciudades[1],626)
+# espania.insertar_arista(ciudades[1],ciudades[2],1108)
+# espania.insertar_arista(ciudades[0],ciudades[3],500)
+# espania.insertar_arista(ciudades[1],ciudades[3],994)
 
     
-espania.mostrar_grafo()
-espania.mostrar_distancias_ordenadas()
+# espania.mostrar_grafo()
+# espania.mostrar_distancias_ordenadas()
 
 
 
