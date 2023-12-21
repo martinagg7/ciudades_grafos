@@ -1,4 +1,4 @@
-from bst import NodoArbol, Arbol
+
 class Nodo:#Nodo
     def __init__(self,nombre):
         self.nombre=nombre
@@ -17,6 +17,7 @@ class Grafo:
     def __init__(self):
         self.numero_de_nodos = 0
         self.nodos = []
+   
 
     
     def insertar_nodo(self,nodo):
