@@ -3,7 +3,7 @@ class NodoBST:
         self.izquierda = None
         self.derecha = None
         self.distancia = distancia
-        self.aristas = []  # Lista de aristas con esta distancia
+        self.aristas = []  
 
     def insertar(self, distancia, arista):
         if not self.distancia:
