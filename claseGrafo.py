@@ -1,4 +1,4 @@
-from bst import BST
+from bst import *
 class Nodo:#Nodo
     def __init__(self,nombre):
         self.nombre=nombre
@@ -21,7 +21,7 @@ class Grafo:
     def __init__(self):
         self.numero_de_nodos = 0
         self.nodos = []
-        self.bst = BST()
+        self.bst = Arbol()
    
     def insertar_nodo(self,nodo):
         nodo.insertar_id(self.numero_de_nodos)
@@ -32,7 +32,7 @@ class Grafo:
         arista = Arista(nodo1, nodo2, distancia)
         nodo1.caminos.append(Arista(nodo1, nodo2, distancia))
         nodo2.caminos.append(Arista(nodo2, nodo1, distancia))
-        self.bst.insertar(distancia, arista)
+        self.bst.insertar(distancia, [arista])
 
 
     def mostrar_grafo(self):

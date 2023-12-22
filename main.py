@@ -44,12 +44,12 @@ print("La distancia minima es", distancia, "por la ruta", [nodo.nombre for nodo 
 # print("Camino mínimo desde A a D:", [nodo.nombre for nodo in camino_minimo])
 
 print("Arbol de busqueda binaria")
-arbol = BST()
+arbol = Arbol()
 arbol.insertar(1, ['A', 'B', 'C', 'D'])
 arbol.insertar(2, ['B', 'C'])
 arbol.insertar(4, ['A', 'C'])
 arbol.insertar(5, ['B', 'D'])
-print(arbol.obtener_distancias_ordenadas())
+print(arbol.in_order())
 
 # mst = Prim.calcular_mst(grafo)
 
